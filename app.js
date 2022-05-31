@@ -1,18 +1,66 @@
-// Triangulo de asteriscos
-let cad = "";
-for (let fila = 1; fila <= 5; fila++) {
-  for (let columna = 0; columna < fila; columna++) {
-    cad += "* ";
+const clock = () => {
+  let today = new Date();
+  let hora = today.getHours();
+  let minutos = today.getMinutes();
+  let segundos = today.getSeconds();
+  let periodo = "AM";
+  let mes = today.getMonth();
+  let dia = today.getDay();
+  let fechaDia = today.getDate();
+  let año = today.getFullYear();
+  let meses = [
+    "Ene",
+    "feb",
+    "Mar",
+    "Abr",
+    "May",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dic",
+  ];
+  let mostrarmes = "";
+  for (let i = mes; i <= 12; i++) {
+    mostrarmes = meses[mes];
   }
-//   console.log(cad);
-  cad = "";
-}
-// tabla de multiplicar
-for (let num1 = 1; num1 <= 3; num1++) {
-  for (let num2 = 1; num2 <= 4; num2++) {
-    let resutl = num1 * num2;
-    // console.log(`${num1} * ${num2} = ${resutl}`);
+  let dias = [
+    "",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sabado",
+    "Domingo",
+  ];
+  let mostrardia = "";
+  for (let i = dia; i <= 7; i++) {
+    mostrardia = dias[dia];
   }
-//   console.log(`---------`);
-}
 
+  if (hora >= 12) {
+    periodo = "PM";
+  } else if (hora < 10) {
+    hora = "0" + hora;
+  } else if (minutos < 10) {
+    minutos = "0" + minutos;
+  } else if (segundos < 10) {
+    segundos = "0" + segundos;
+  }
+
+  hora = hora > 12 ? hora % 12 : hora;
+  const d = document;
+  d.querySelector(".hora").textContent = hora;
+  d.querySelector(".minutos").textContent = minutos;
+  d.querySelector(".periodo").textContent = periodo;
+  d.querySelector(".segundos").textContent = segundos;
+  d.querySelector(".hora").textContent = hora;
+  d.querySelector(".mes-nombre").textContent = mostrarmes;
+  d.querySelector(".dia-nombre").textContent = mostrardia;
+  d.querySelector(".dia-numero").textContent = fechaDia;
+  d.querySelector(".año").textContent = año;
+};
+let actualizarHora = setInterval(clock, 1000);

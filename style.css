@@ -1,11 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-span {
+body {
+  background-color: #2d2f41;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.reloj {
+  background-color: #2d2f41;
+  color: #fff;
+  width: 425px;
+  padding: 20px 45px;
+  box-shadow: 0 5px 25px rgba(14, 21, 37, 0.8);
+  border-radius: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.time {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hora,
+.puntos,
+.minutos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  padding: 0 10px;
+  line-height: 120px;
+}
+
+.hora,
+.minutos {
   font-size: 6.5rem;
+}
+
+.hora {
+  background: linear-gradient(90deg, #1d9af4, #044bbb);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.minutos {
+  font-weight: 700;
   background: linear-gradient(90deg, #ff5e9a, #ffb960);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  
+}
+
+.time-aside {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.puntos {
+  color: #929292;
+  font-size: 5rem;
+}
+.periodo,
+.segundos {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.periodo {
+  transform: translateY(-20px);
+  background: linear-gradient(90deg, #f7b63f, #faf879);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.segundos {
+  transform: translateY(16px);
+  background: linear-gradient(90deg, #24ff6d, #2f93f1);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.calendar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  background: linear-gradient(90deg, #ae4af6, #ff98d1);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.mes-nombre,.dia-nombre,.dia-numero,.año{
+  margin-left: 8px;
 }
